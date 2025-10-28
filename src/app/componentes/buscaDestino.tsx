@@ -21,12 +21,17 @@ export default function BuscaDestino({ onBuscarRota }: { onBuscarRota: (origem: 
 
     // Function to save a single recent destination to backend API
     const saveDestino = async (destino: string) => {
+        const isLoggedIn = !!localStorage.getItem("nomeLogado");
+        if (!isLoggedIn) {
+            // If not logged in, skip saving to avoid errors
+            return;
+        }
         try {
             // Call backend API to create destination, including credentials to send cookies
             const response = await fetch(`/api/destinos`, {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json", 
+                    "Content-Type": "application/json",
                 },
                 credentials: "include",
                 body: JSON.stringify({ nome: destino }),
