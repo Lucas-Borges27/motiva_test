@@ -42,10 +42,10 @@ const Header: React.FC<HeaderProps> = ({ userName, onLogout }) => {
         <Link href="/" className="flex items-center">
           <Image
             id="logoViaMobilidade"
-            src="/images/LogoMotivaSemEscritaESemFundo.png"
+            src="/images/logoMotivaSemEscrita.png"
             alt="Logo"
             width={60}
-            height={8}
+            height={40}
             className="m-5 mr-3"
           />
           ViaMobilidade
