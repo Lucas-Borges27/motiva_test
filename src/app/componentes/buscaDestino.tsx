@@ -64,7 +64,7 @@ export default function BuscaDestino({ onBuscarRota }: { onBuscarRota: (origem: 
     };
 
     const buscarRota = () => {
-        const origemFinal = usarMinhaLocalizacao ? "Minha Localização" : origem;
+        const origemFinal = origem;
 
         if (!origemFinal || origemFinal.trim() === "") {
             alert("Por favor, insira a origem antes de buscar a rota.");
@@ -99,23 +99,13 @@ export default function BuscaDestino({ onBuscarRota }: { onBuscarRota: (origem: 
                 <div className="w-full max-w-md mt-2 p-4 bg-gray-50 rounded-xl border border-gray-200 shadow-sm">
                     <div className="flex items-center gap-2">
                         <input
-                            type="text"
-                            value={origem}
-                            onChange={(e) => setOrigem(e.target.value)}
-                            placeholder="Onde você está?"
-                            className="w-full px-4 py-2 rounded-lg border border-gray-300 text-base shadow-sm focus:ring-2 focus:#5E22F3 focus:outline-none"
+                            type = "text"
+                            value = {origem}
+                            onChange = {(e) => setOrigem(e.target.value)}
+                            placeholder = "Onde você está?"
+                            className = "w-full px-4 py-2 rounded-lg border border-gray-300 text-base shadow-sm focus:ring-2 focus:#5E22F3 focus:outline-none"
                             disabled={usarMinhaLocalizacao}
                         />
-                        <label className="flex items-center gap-1 text-sm whitespace-nowrap">
-                            <input
-                                type="checkbox"
-                                id="usarLocalizacao"
-                                checked={usarMinhaLocalizacao}
-                                onChange={() => setUsarMinhaLocalizacao(!usarMinhaLocalizacao)}
-                                className="mr-1"
-                            />
-                            Usar Minha Localização
-                        </label>
                     </div>
 
                     {/* Recentes */}
