@@ -26,21 +26,21 @@ export default function Home() {
 
     return (
         <main className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900 font-sans">
-            <div className="max-w-5xl mx-auto px-6 py-10 space-y-8">
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-10 space-y-4 sm:space-y-8">
                 
                 {/* Barra de busca e recentes */}
-                <div className="bg-white shadow-lg rounded-2xl p-6 space-y-6 border border-gray-100">
+                <div className="bg-white shadow-lg rounded-lg sm:rounded-2xl p-4 sm:p-6 space-y-4 sm:space-y-6 border border-gray-100">
                     <BuscaDestino onBuscarRota={handleBuscarRota} />
                     <Recentes />
                 </div>
 
                 {/* Card do próximo trem */}
                 {tempoProximoTrem && (
-                    <div className="flex justify-center">
-                        <div className="bg-gradient-to-r [#EFE9FF] text-white px-6 py-4 rounded-2xl shadow-xl text-center max-w-sm w-full transform transition-all duration-500">
-                            <div className="text-4xl font-bold mb-2">🚇</div>
-                            <p className="text-lg font-medium">Próximo trem em</p>
-                            <p className="text-3xl font-extrabold text-[#5E22F3] mt-1 animate-pulse">
+                    <div className="flex justify-center px-4 sm:px-0">
+                        <div className="bg-gradient-to-r [#EFE9FF] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl shadow-xl text-center w-full sm:max-w-sm transform transition-all duration-500">
+                            <div className="text-3xl sm:text-4xl font-bold mb-1 sm:mb-2">🚇</div>
+                            <p className="text-base sm:text-lg font-medium">Próximo trem em</p>
+                            <p className="text-2xl sm:text-3xl font-extrabold text-[#5E22F3] mt-1 animate-pulse">
                                 {tempoProximoTrem}
                             </p>
                         </div>
@@ -48,7 +48,7 @@ export default function Home() {
                 )}
 
                 {/* Mapa */}
-                <div className="bg-white shadow-lg rounded-2xl p-6 border border-gray-100">
+                <div className="bg-white shadow-lg rounded-lg sm:rounded-2xl p-4 sm:p-6 border border-gray-100">
                     <Mapa origem={origem} destino={destino} />
                 </div>
                 
